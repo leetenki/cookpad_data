@@ -11,8 +11,8 @@ use JSON;
 my $ua = LWP::UserAgent->new;
 $ua->agent('Chrome/50.0.2661.94 ');
 
-my $recipes = ();
-for(my $recipe_id = 1000000; $recipe_id < 2000000; $recipe_id++) {
+my $recipes = load_json();
+for(my $recipe_id = 1015000; $recipe_id < 2000000; $recipe_id++) {
 	# send request
 	my $req = HTTP::Request->new(GET => "http://cookpad.com/recipe/".$recipe_id);
 	my $res = $ua->request($req);
@@ -75,3 +75,10 @@ sub save_json {
 	print $out $json_str;
 	close($out);
 }
+
+sub load_json {
+	open(my $in, "<", "recipes.json");
+	my $json = from_json(<$in>);
+	return $json;
+}
+

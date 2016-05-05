@@ -15,3 +15,5 @@ view_recipes.plの中でrecipes.jsonをパースして表示してる.
 使う時はview_recipes.plと同じようにhashアクセスすればOK.
 
 ※JSON.pmがないよって言われたら，cpanmでJSON入れておけばOK.
+
+※1万件じゃ足りない場合は，scraping.plを使う．1日ぶん回せば，10万件くらい取ってきてくれる．

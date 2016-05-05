@@ -12,5 +12,7 @@ for $recipe (@$recipes) {
 	map { print $_->{name}."[".$_->{amount}."] "; } @{$recipe->{ingredients}};
 	print "\n";
 	map { print "[".$_."] "; } @{$recipe->{tags}};
+	print "\n";
+	map { print "\t".$_."\n"; } @{$recipe->{processes}};
 	print "\n\n";
 }
